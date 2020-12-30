@@ -7,14 +7,10 @@ text_file = open("problem.dat", "r")
 lines = text_file.readlines()
 dimensions = [x.replace('\n', '') for x in lines]
 
-def surface_area(l,w,h):
-  s_area = 2*l*w + 2*w*h + 2*h*l
-  return(s_area)
-
-def smallest_area(l,w,h):
-  a = l*w
-  b = l*h
-  c = w*h
+def smallest_perimeter(l,w,h):
+  a = (2*l) + (2*w)
+  b = (2*l) + (2*h)
+  c = (2*h) + (2*w)
   if a < b and a < c :
     smallest = a
   elif b < c :
@@ -23,12 +19,14 @@ def smallest_area(l,w,h):
     smallest = c
   return(smallest)
 
-total = 0
+def bow_length(l,w,h):
+  bow = l*w*h
+  return(bow)
+
+ribbon_total = 0
 
 for i in dimensions:
   numbers = i.split('x')
-  surface_area(int(numbers[0]),int(numbers[1]),int(numbers[2]))
-  smallest_area(int(numbers[0]),int(numbers[1]),int(numbers[2]))
-  total = total + surface_area(int(numbers[0]),int(numbers[1]),int(numbers[2])) + smallest_area(int(numbers[0]),int(numbers[1]),int(numbers[2]))
-  
-print(total)
+
+  ribbon_total = ribbon_total + smallest_perimeter(int(numbers[0]),int(numbers[1]),int(numbers[2])) + bow_length(int(numbers[0]),int(numbers[1]),int(numbers[2]))
+print(ribbon_total)
