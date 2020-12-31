@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Desc: find two numbers that add up to 2020 and multiply them
+# Desc: find how many houses presents were delivered with 1 santa
 
 from itertools import product 
 
