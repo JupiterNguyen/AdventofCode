@@ -9,3 +9,4 @@ close = f.count(')')
 
 floor = open - close
 print(floor)
+text_file.close()

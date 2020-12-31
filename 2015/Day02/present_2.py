@@ -30,3 +30,4 @@ for i in dimensions:
 
   ribbon_total = ribbon_total + smallest_perimeter(int(numbers[0]),int(numbers[1]),int(numbers[2])) + bow_length(int(numbers[0]),int(numbers[1]),int(numbers[2]))
 print(ribbon_total)
+text_file.close()
